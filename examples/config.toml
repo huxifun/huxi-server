@@ -1,0 +1,91 @@
+[host]
+name = "呼吸"
+www = "http://www.huxi.fun"
+domain = "www.huxi.fun"
+logo = "/img/logo.png"
+my_name = "我的呼吸"
+icp = "京ICP备12345678号-1"
+copyright = "呼吸 ©Huxi.fun"
+
+[database]
+url = "postgres://huxi:12345678@localhost/www"
+
+[email]
+stmp_server = "smtp.qq.com"
+stmp_user = "1234567890@qq.com"
+stmp_password = "1234567890"
+stmp_from = "Example <example@qq.com>"
+
+#文章
+[hu]
+#id, url, name
+category = [
+  [0, "rust", "Rust 编程"],
+  [1, "typescript", "TypeScript"],
+  [2, "web", "Web"],
+  [3, "database", "数据库"],
+  [4, "tools", "工具"],
+  [5, "sys", "嵌入式"],
+  [6, "ai", "人工智能"],
+  [7, "mobile", "手机移动"]]
+content_type = [
+  [0, "news", "新闻"],
+  [1, "help", "提问"],
+  [2, "blog", "博客"],
+  [3, "code", "代码示例"],
+  [4, "book", "教程"],
+  [5, "video", "视频"]]
+page_size = 20
+
+#好书
+[book]
+#id, url, name
+category = [
+  [0, "rust", "Rust 编程"],
+  [1, "typescript", "TypeScript"],
+  [2, "web", "Web"],
+  [3, "database", "数据库"],
+  [4, "tools", "工具"],
+  [5, "sys", "嵌入式"],
+  [6, "ai", "人工智能"],
+  [7, "mobile", "手机移动"]]
+content_type = [
+  [0, "ebook", "电子图书"],
+  [1, "paper", "纸质图书"],
+  [2, "online", "在线阅读"]]
+page_size = 20
+upload_path = "htdocs/img/pub/book"
+public_url = "/img/pub/book"
+
+#微博
+[xi]
+#id, url, name
+category = [
+  [0, "rust", "Rust 编程"],
+  [1, "typescript", "TypeScript"],
+  [2, "web", "Web"],
+  [3, "database", "数据库"],
+  [4, "tools", "工具"],
+  [5, "sys", "嵌入式"],
+  [6, "ai", "人工智能"],
+  [7, "mobile", "手机移动"]]
+content_type = [
+  [0, "ling", "新发现"],
+  [1, "todo", "TODO"],
+  [2, "url", "网址"],
+  [3, "alarm", "提醒"],
+  [4, "think", "思想"],
+  [5, "code", "代码"]]
+page_size = 20
+
+[image]
+upload_path = "htdocs/img/pub"
+public_url = "/img/pub"
+resize = [
+  ["不缩放", 0],
+  ["宽度700px", 700],
+  ["宽度1000px", 1000]]
+
+[user]
+upload_path = "htdocs/img/pub/user"
+public_url = "/img/pub/user"
