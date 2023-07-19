@@ -1,4 +1,10 @@
-# Huxi(呼吸) Server
+# Huxi Server
+
+Huxi Server is a site engine for web applications, based on Axum and PostgreSQL. 
+
+The document in English is being written, and the following is in Chinese.
+
+Demo: [https://www.huxi.fun](https://www.huxi.fun)
 
 ## 介绍
 
@@ -14,7 +20,6 @@ Huxi(呼吸) Server 是用Rust编写的网站系统，主要用于构建网站�
 * 图片
 * 站内信箱
 
-演示： [https://www.huxi.fun](https://www.huxi.fun)
 
 ## 基本架构
 

@@ -1,13 +1,17 @@
 [package]
 name = "huxi-server"
-description = "Huxi Server"
+description = "A site engine for web applications, based on Axum and PostgreSQL"
 version = "0.8.0"
 edition = "2021"
-authors = ["HuxiFun <huxifun@sina.com>"]
+authors = ["CY <huxifun@sina.com>"]
+categories = ["web-programming"]
+keywords = ["web", "engine", "site", "blog"]
+repository = "https://github.com/huxifun/huxi-server"
+rust-version = "1.69"
 
 [dependencies]
 tokio = { version = "1.29.1", features = ["full"] }
-axum = { version = "0.6.18", features = ["multipart", "matched-path", "query"] }
+axum = { version = "0.6.19", features = ["multipart", "matched-path", "query"] }
 sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "chrono", "postgres", "macros", "uuid"] }
 clap = { version = "4.3", features = ["derive", "env"] }
 serde = { version = "1", features = ["derive"] }
