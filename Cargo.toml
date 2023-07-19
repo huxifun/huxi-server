@@ -7,6 +7,9 @@ authors = ["CY <huxifun@sina.com>"]
 categories = ["web-programming"]
 keywords = ["web", "engine", "site", "blog"]
 repository = "https://github.com/huxifun/huxi-server"
+homepage = "https://www.huxi.fun"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
 rust-version = "1.63"
 
 [dependencies]
