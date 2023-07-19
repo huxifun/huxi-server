@@ -552,6 +552,11 @@ fn content_html(ctx: &WebContext, image: &Image) -> Result<Markup> {
             div class="row justify-content-center" {
                 div class="col col-md-10 p-3 shadow-lg mb-5 bg-body rounded" {
                     div class="text-center" {
+                        @if let Some(ref tags) = image.tags {
+                            span class="col mx-2" {
+                                "Tags: " (tags)
+                            }
+                        }
                         span class="mx-2" {
                             "日期："(show_date(image.created_at))
                         }

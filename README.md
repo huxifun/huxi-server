@@ -75,6 +75,11 @@ update users set i_role=5 where name='admin';
 
 见 `examples/nginx.conf`
 
+## TODO
+
+* 完善栏目管理
+* 完善用户管理
+* 优化页面
 
 ## 联系作者
 
