@@ -7,7 +7,7 @@ authors = ["CY <huxifun@sina.com>"]
 categories = ["web-programming"]
 keywords = ["web", "engine", "site", "blog"]
 repository = "https://github.com/huxifun/huxi-server"
-rust-version = "1.69"
+rust-version = "1.63"
 
 [dependencies]
 tokio = { version = "1.29.1", features = ["full"] }
