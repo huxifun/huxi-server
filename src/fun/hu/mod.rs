@@ -677,6 +677,7 @@ async fn hu_pub_cat(
                     .size(5)
                     .admin(false)
                     .sudo(sudo)
+                    .search(false)
                     .show_cat_type_name()
                     //.pager(Some(page_link.as_str()))
                     .i_type(Some(ty.0));
