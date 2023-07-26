@@ -1,7 +1,7 @@
 [package]
 name = "huxi-server"
 description = "A site engine for web applications, based on Axum and PostgreSQL"
-version = "0.8.0"
+version = "0.8.1"
 edition = "2021"
 authors = ["CY <huxifun@sina.com>"]
 categories = ["web-programming"]
