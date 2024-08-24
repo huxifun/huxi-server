@@ -4,7 +4,7 @@ Huxi Server is a site engine for web applications, based on Axum and PostgreSQL.
 
 The document in English is being written, and the following is in Chinese.
 
-Demo: [https://www.huxi.fun](https://www.huxi.fun)
+Demo: [http://www.huxi.fun](http://www.huxi.fun)
 
 ## 介绍
 
