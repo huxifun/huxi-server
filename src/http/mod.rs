@@ -2,7 +2,7 @@ pub mod email;
 pub mod error;
 pub mod types;
 
-use anyhow::Context;
+use anyhow::{Context, Ok};
 use axum::{
     error_handling::HandleErrorLayer,
     extract::DefaultBodyLimit,
@@ -11,7 +11,8 @@ use axum::{
     BoxError, Router,
 };
 
-use axum_session::{SessionConfig, SessionLayer, SessionPgPool, SessionStore};
+use axum_session::{SessionConfig, SessionLayer, SessionStore};
+use axum_session_sqlx::SessionPgPool;
 use sqlx::postgres::PgPool;
 use std::net::SocketAddr;
 use std::sync::Arc;
@@ -37,14 +38,14 @@ pub async fn serve(config: WebConfig, db: PgPool, port: u16) -> anyhow::Result<(
     let session_config = SessionConfig::default()
         .with_table_name("sessions")
         .with_max_age(None)
-        .with_cookie_name("huxifun");
+        .with_session_name("huxifun");
 
     let session_store = SessionStore::<SessionPgPool>::new(Some(db.clone().into()), session_config)
         .await
         .unwrap();
 
     //Create the Database table for storing our Session Data.
-    session_store.initiate().await.unwrap();
+    //session_store.initiate().await.unwrap();
 
     let ctx = WebContext {
         config: Arc::new(config),
@@ -78,10 +79,13 @@ pub async fn serve(config: WebConfig, db: PgPool, port: u16) -> anyhow::Result<(
     let addr = SocketAddr::from(([0, 0, 0, 0], port));
     tracing::debug!("listening on {}", addr);
 
-    axum::Server::bind(&addr)
-        .serve(app.into_make_service())
-        .await
-        .context("error running HTTP server")
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    axum::serve(listener, app).await.unwrap();
+    //axum::Server::bind(&addr)
+    //    .serve(app.into_make_service())
+    //    .await
+    //    .context("error running HTTP server")
+    Ok(())
 }
 
 async fn handle_timeout_error(

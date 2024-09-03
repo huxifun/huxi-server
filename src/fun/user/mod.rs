@@ -6,7 +6,8 @@ use axum::extract::{Form, MatchedPath, Multipart, Path, Query, State};
 use axum::response::Redirect;
 use axum::{routing::get, Router};
 
-use axum_session::{Session, SessionPgPool};
+use axum_session::Session;
+use axum_session_sqlx::SessionPgPool;
 
 use chrono::Local;
 use maud::{html, Markup};

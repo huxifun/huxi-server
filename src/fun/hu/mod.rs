@@ -4,7 +4,8 @@ pub mod db;
 
 use axum::extract::{Form, MatchedPath, Path, Query, State};
 use axum::{routing::get, Router};
-use axum_session::{Session, SessionPgPool};
+use axum_session::Session;
+use axum_session_sqlx::SessionPgPool;
 
 use maud::{html, Markup, PreEscaped};
 use serde::Deserialize;

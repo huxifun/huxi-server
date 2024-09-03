@@ -1,43 +1,45 @@
 [package]
 name = "huxi-server"
 description = "A site engine for web applications, based on Axum and PostgreSQL"
-version = "0.8.1"
+version = "0.9.0"
 edition = "2021"
 authors = ["CY <huxifun@sina.com>"]
 categories = ["web-programming"]
 keywords = ["web", "engine", "site", "blog"]
 repository = "https://github.com/huxifun/huxi-server"
-homepage = "https://www.huxi.fun"
+homepage = "http://www.huxi.fun"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 rust-version = "1.63"
 
 [dependencies]
-tokio = { version = "1.29.1", features = ["full"] }
-axum = { version = "0.6.19", features = ["multipart", "matched-path", "query"] }
-sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "chrono", "postgres", "macros", "uuid"] }
-clap = { version = "4.3", features = ["derive", "env"] }
+tokio = { version = "1.40.0", features = ["full"] }
+axum = { version = "0.7.5", features = ["multipart", "matched-path", "query"] }
+sqlx = { version = "0.7.3", features = ["runtime-tokio-rustls", "chrono", "postgres", "macros", "uuid"] }
+clap = { version = "4.5.16", features = ["derive", "env"] }
 serde = { version = "1", features = ["derive"] }
-serde_json = "1.0"
+serde_json = "1"
 serde_yaml = "0.9"
-toml = "0.7"
-axum_session = { version = "0.3.1", features = [ "postgres-rustls"] }
+toml = "0.8"
+axum_session = { version = "0.14.1"}
+axum_session_sqlx = { version = "0.1.0", features = [ "postgres", "tls-rustls"] }
+
 futures-util = "0.3"
-maud = { version = "0.25", features = ["axum"] }
-pulldown-cmark = "0.9"
-ammonia = "3.3.0"
+maud = { version = "0.26", features = ["axum"] }
+pulldown-cmark = "0.12"
+ammonia = "4"
 urlencoding = "2.1"
 
 anyhow = "1"
 dotenv = "0.15"
-env_logger = "0.10"
+env_logger = "0.11"
 log = "0.4"
 rand = "0.8.5"
 thiserror = "1"
 argon2 = "0.5"
-tower = { version = "0.4.13", features = ["timeout"] }
-tower-http = { version = "0.4", features = ["trace", "limit", "fs"] }
-http-body = "0.4.5"
+tower = { version = "0.5", features = ["timeout"] }
+tower-http = { version = "0.5", features = ["trace", "limit", "fs"] }
+http-body = "1"
 
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
@@ -46,8 +48,8 @@ sha2 = "0.10"
 time = "0.3"
 chrono = "0.4"
 
-lettre = { version = "0.10", default-features = false, features = ["smtp-transport", "tokio1-rustls-tls", "builder"]}
-regex = "1.9"
-uuid = { version = "1.4", features = [ "v4", "fast-rng", "macro-diagnostics" ]}
-image = "0.24"
+lettre = { version = "0.11", default-features = false, features = ["smtp-transport", "tokio1-rustls-tls", "builder"]}
+regex = "1.10"
+uuid = { version = "1.10", features = [ "v4", "fast-rng", "macro-diagnostics" ]}
+image = "0.25"
 kamadak-exif = "0.5"

@@ -10,7 +10,8 @@ use std::fs::File;
 use std::io::Cursor;
 
 use anyhow::anyhow;
-use axum_session::{Session, SessionPgPool};
+use axum_session::Session;
+use axum_session_sqlx::SessionPgPool;
 use chrono::Local;
 use maud::{html, Markup, PreEscaped};
 

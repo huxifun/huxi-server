@@ -10,7 +10,8 @@ pub mod xi;
 
 use axum::{extract::State, routing::get, Router};
 
-use axum_session::{Session, SessionPgPool};
+use axum_session::Session;
+use axum_session_sqlx::SessionPgPool;
 
 use crate::fun::user::check_sudo;
 use crate::md;

@@ -9,7 +9,8 @@ use axum::{
     Router,
 };
 
-use axum_session::{Session, SessionPgPool};
+use axum_session::Session;
+use axum_session_sqlx::SessionPgPool;
 use maud::{html, Markup, PreEscaped};
 
 use crate::fun::layout::Html;
