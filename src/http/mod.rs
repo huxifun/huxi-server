@@ -44,9 +44,6 @@ pub async fn serve(config: WebConfig, db: PgPool, port: u16) -> anyhow::Result<(
         .await
         .unwrap();
 
-    //Create the Database table for storing our Session Data.
-    //session_store.initiate().await.unwrap();
-
     let ctx = WebContext {
         config: Arc::new(config),
         db,
@@ -79,12 +76,9 @@ pub async fn serve(config: WebConfig, db: PgPool, port: u16) -> anyhow::Result<(
     let addr = SocketAddr::from(([0, 0, 0, 0], port));
     tracing::debug!("listening on {}", addr);
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
     axum::serve(listener, app).await.unwrap();
-    //axum::Server::bind(&addr)
-    //    .serve(app.into_make_service())
-    //    .await
-    //    .context("error running HTTP server")
+
     Ok(())
 }
 
